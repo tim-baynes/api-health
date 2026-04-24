@@ -1,129 +1,172 @@
 owner: FootprintLab
 repo: api-health
-
 sites:
-  - name: Activity Units
-    url: $ACTIVITY_UNITS_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-
-  - name: Activity Classification Systems
-    url: $ACTIVITY_CLASSIFICATION_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-    
-  - name: Levels
-    url: $LEVELS_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Sources
-    url: $SOURCES_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Regions
-    url: $REGIONS_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Countries
-    url: $COUNTRIES_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Impact Categories
-    url: $IMPACT_CATEGORIES_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Metrics
-    url: $METRICS_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Scopes
-    url: $SCOPES_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Countries
-    url: $COUNTRIES_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-      
-  - name: Footprint Free
-    url: $FOOTPRINT_FREE_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-
-  - name: Footprint Bronze
-    url: $FOOTPRINT_BRONZE_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-
-  - name: Footprint Silver
-    url: $FOOTPRINT_SILVER_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-
-  - name: Footprint Gold
-    url: $FOOTPRINT_GOLD_URL
-    headers:
-      - "Authorization: Bearer $BEARER_TOKEN"
-      - "x-api-key: $API_KEY"
-      - "Content-Type: application/json"
-    icon: https://data.footprintlab.io/favicon.ico
-
+- name: Search/Batch
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/search/batch
+  method: POST
+  body: '[{"activity_id":"growing wheat","primary_data_year":2022,"country":"USA","impact_category":"climate_change"},{"activity_id":"steel
+    ","primary_data_year":2022,"country":"AUS"}]'
+- name: Get Factor/Batch
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/get-factor/batch
+  method: POST
+  body: '[{"activity_id":"growing_wheat","primary_data_year":2022,"country":"AUS","impact_category":"climate_change"},{"activity_id":"steel_production","primary_data_year":2022,"country":"USA"}]'
+- name: Copilot
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/copilot?activity_query=manufacturing+shoes&size=5
+- name: Search
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/search?activity_id=growing_wheat&activity_unit=%24AUD&activity_classification_system=ANZSIC&activity_classification_code=A01&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&impact_indicator=GHG+emissions&scope=3&valuation=bp&source=FootprintLab&fpl_data_version=1.1&flow=water
+- name: Get Factor
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/get-factor?activity_id=growing_wheat&activity_unit=%24AUD&activity_classification_system=ANZSIC&activity_classification_code=A01&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&impact_indicator=GHG+emissions&scope=3&valuation=bp&source=FootprintLab&fpl_data_version=1.1&flow=water&method=faostat&record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&data_source_release_version=FPL+V0.1
+- name: Calculate
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/calculate
+  method: POST
+  body: '{"activity_query":{"activity_id":"growing_wheat","country":"AUS","impact_category":"climate_change","primary_data_year":2023},"activity_data":{"kg":1000}}'
+- name: Calculate/Batch
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/calculate/batch
+  method: POST
+  body: '[{"activity_query":{"activity_id":"growing_wheat","country":"AUS","impact_category":"climate_change","primary_data_year":2023},"activity_data":{"kg":1000}},{"activity_query":{"activity_id":"steel","country":"USA","impact_category":"climate_change","primary_data_year":2022},"activity_data":{"kg":500}}]'
+- name: Activity Unit
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/activity-unit
+- name: Impact Unit
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/impact-unit
+- name: Activity Classification System
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/activity-classification-system
+- name: Source
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/source
+- name: Region
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/region
+- name: Country
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/country
+- name: Impact Category
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/impact-category
+- name: Impact Indicator
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/impact-indicator
+- name: Flow
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/flow
+- name: Footprint Free
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/footprint-free?record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&activity_classification_system=ANZSIC&activity_id=growing_wheat&activity_unit=%24AUD&source=FootprintLab&data_source_release_version=FPL+V0.1&release_date=2023&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&metric=kg+CO2eq%2F%24AUD&scope=3&notes=Sectoral+average&subnational=Western+Australia
+- name: Footprint Bronze
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/footprint-bronze?record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&activity_classification_system=ANZSIC&activity_id=growing_wheat&activity_unit=%24AUD&source=FootprintLab&data_source_release_version=FPL+V0.1&release_date=2023&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&metric=kg+CO2eq%2F%24AUD&scope=3&notes=Sectoral+average&subnational=Western+Australia
+- name: Footprint Silver
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/footprint-silver?record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&activity_classification_system=ANZSIC&activity_id=growing_wheat&activity_unit=%24AUD&source=FootprintLab&data_source_release_version=FPL+V0.1&release_date=2023&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&metric=kg+CO2eq%2F%24AUD&scope=3&notes=Sectoral+average&subnational=Western+Australia
+- name: Footprint Gold
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/footprint-gold?record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&activity_classification_system=ANZSIC&activity_id=growing_wheat&activity_unit=%24AUD&source=FootprintLab&data_source_release_version=FPL+V0.1&release_date=2023&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&metric=kg+CO2eq%2F%24AUD&scope=3&notes=Sectoral+average&subnational=Western+Australia
+- name: Convert Currency
+  headers:
+  - 'Authorization: Bearer $BEARER_TOKEN'
+  - 'x-api-key: $API_KEY'
+  - 'Content-Type: application/json'
+  icon: https://data.footprintlab.io/favicon.ico
+  url: https://api.footprintlab.io/convert-currency?buyer_currency=AUD&seller_country=KOR&purchase_year=2023&spend_value=123.45
 status-website:
   baseUrl: /api-health
-  logoUrl: https://raw.githubusercontent.com/FootprintLab/api-health/refs/heads/master/assets/footprintlab_logo.png  
+  logoUrl: https://raw.githubusercontent.com/FootprintLab/api-health/refs/heads/master/assets/footprintlab_logo.png
   name: FootprintLab API Health
-  introTitle: "FootprintLab API Health Status"
-  introMessage: "Welcome to the FootprintLab API Health status page. Here you can find the current status of our APIs and services."
+  introTitle: FootprintLab API Health Status
+  introMessage: Welcome to the FootprintLab API Health status page. Here you can find
+    the current status of our APIs and services.
   navbar:
-    - title: Status
-      href: /api-health
+  - title: Status
+    href: /api-health
   theme: light
-
 i18n:
-  footer: "[FootprintLab](https://www.footprintlab.io/)"
+  footer: '[FootprintLab](https://www.footprintlab.io/)'
