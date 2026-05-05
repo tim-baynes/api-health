@@ -1,7 +1,7 @@
 url: https://api.footprintlab.io/footprint-bronze?record_id=49ac0bda-2a63-4d2b-a73f-c66f198bec82&activity_classification_system=ANZSIC&activity_id=growing_wheat&activity_unit=%24AUD&source=FootprintLab&data_source_release_version=FPL+V0.1&release_date=2023&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&metric=kg+CO2eq%2F%24AUD&scope=3&notes=Sectoral+average&subnational=Western+Australia
 status: up
 code: 200
-responseTime: 257
-lastUpdated: 2026-05-05T00:01:33.279Z
+responseTime: 610
+lastUpdated: 2026-05-05T23:56:34.720Z
 startTime: 2025-07-30T00:00:16.867Z
 generator: Upptime <https://github.com/upptime/upptime>
