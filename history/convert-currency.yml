@@ -1,7 +1,7 @@
 url: https://api.footprintlab.io/convert-currency?buyer_currency=AUD&seller_country=KOR&purchase_year=2023&spend_value=123.45
 status: up
 code: 200
-responseTime: 649
-lastUpdated: 2026-05-05T23:56:37.215Z
+responseTime: 550
+lastUpdated: 2026-05-06T23:57:12.594Z
 startTime: 2026-04-24T00:15:01.561Z
 generator: Upptime <https://github.com/upptime/upptime>
