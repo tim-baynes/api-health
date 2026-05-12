@@ -1,7 +1,7 @@
 url: https://api.footprintlab.io/search?activity_id=growing_wheat&activity_unit=%24AUD&activity_classification_system=ANZSIC&activity_classification_code=A01&primary_data_year=2023&region=Asia+Pacific&country=AUS&impact_category=GHG+emissions&impact_indicator=GHG+emissions&scope=3&valuation=bp&source=FootprintLab&fpl_data_version=1.1&flow=water
 status: up
 code: 200
-responseTime: 631
-lastUpdated: 2026-05-10T23:59:33.424Z
+responseTime: 805
+lastUpdated: 2026-05-12T00:04:22.544Z
 startTime: 2026-04-24T00:14:33.899Z
 generator: Upptime <https://github.com/upptime/upptime>
